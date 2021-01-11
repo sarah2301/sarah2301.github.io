@@ -1,0 +1,56 @@
+/* fichier CSS*/
+
+
+/* Copyright 2015 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+
+/* This file is dynamically processed by a C++ data source handler to fill in
+ * some per-platform/locale styles that dramatically alter the page. This is
+ * done to reduce flicker, as JS may not run before the page is rendered.
+ *
+ * There are two ways to include this stylesheet:
+ * 1. via its chrome://resources/ URL in HTML, i.e.:
+ *
+ *   <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
+ *
+ * 2. via the webui::AppendWebUICSSTextDefaultsMd() method to directly append it
+ * to an HTML string.
+ * Otherwise its placeholders won't be expanded. */
+
+html {
+    /* TODO(dbeam): remove this soon. Prefer dir= in HTML. */
+    direction: ltr;
+    /* ltr direction de le turede gauche à droite */
+}
+
+button {
+    font-family: Tahoma;
+}
+
+body {
+    background: #FFFFFF;
+    margin: 0;
+    font-family: Tahoma;
+    font-size: 81.25%;
+    background-image: url("image.png");
+}
+
+#oneGoogleBar {
+    height: 56px;
+}
+
+#backgroundImage {
+    border: none;
+    height: 100%;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+}
+
+[show-background-image] #backgroundImage {
+    visibility: visible;
+}
